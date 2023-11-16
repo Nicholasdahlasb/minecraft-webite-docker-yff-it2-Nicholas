@@ -39,3 +39,35 @@ p {
 .server-button:hover {
     background-color: #c0392b;
 }
+.contact-button {
+    background-color: #27ae60; /* Set button background color to green */
+    color: #fff; /* Set button text color to white */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px; /* Set border radius for rounded corners */
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px; /* Position at the bottom */
+    left: 10px; /* Position at the left */
+    text-decoration: none; /* Remove underline for the link */
+}
+
+.contact-button:hover {
+    background-color: #219150; /* Change button color on hover */
+}
+.register-button {
+    background-color: #e74c3c; /* Set button background color to red */
+    color: #fff; /* Set button text color to white */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px; /* Set border radius for rounded corners */
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px; /* Position at the bottom */
+    right: 10px; /* Position at the right */
+    text-decoration: none; /* Remove underline for the link */
+}
+
+.register-button:hover {
+    background-color: #c0392b;
+}
