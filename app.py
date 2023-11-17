@@ -17,7 +17,7 @@ def register():
 @app.route('/contact')
 def contact():
     # Redirect to the YouTube video link
-    return redirect("https://www.youtube.com/watch?v=GtL1huin9EE&ab_channel=CSAAInsuranceGroup%2CaAAAInsurer")
+    return redirect("https://discord.gg/uMwMdfDmQ2")
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
