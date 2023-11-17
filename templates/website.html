@@ -7,13 +7,30 @@
     <title>Minecraft Server</title>
 </head>
 <body>
-   <div class="container">
+    <div class="container">
         <h1>Welcome to the Minecraft Server</h1>
         <p>This is the home page.</p>
-        <p>Server IP: <span id="serverIP">1.0.0.150</span></p>
+        <p>Server IP: <span id="serverIP">10.0.0.64</span></p>
         <a href="/server" class="server-button">Server</a>
-        <a href="/register" class="server-button">Register</a>
+        <a href="/map" class="server-button">DynMap</a>
         <a href="/contact" class="contact-button">Contact</a>
+
+        <audio id="backgroundAudio" autoplay loop muted>
+            <source src="headswillroll.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
     </div>
+
+    <script>
+
+        document.body.addEventListener('click', function() {
+            document.getElementById('backgroundAudio').muted = false;
+        });
+
+
+        window.addEventListener('beforeunload', function () {
+            document.getElementById('backgroundAudio').pause();
+        });
+    </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 
 app = Flask(__name__)
 
@@ -10,13 +10,14 @@ def home():
 def server():
     return render_template('server.html')
 
-@app.route('/register')
+@app.route('/map')
 def register():
     return render_template('register.html')
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    # Redirect to the YouTube video link
+    return redirect("https://www.youtube.com/watch?v=GtL1huin9EE&ab_channel=CSAAInsuranceGroup%2CaAAAInsurer")
 
 if __name__ == '__main__':
-    app.run(debug=True,host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0")
