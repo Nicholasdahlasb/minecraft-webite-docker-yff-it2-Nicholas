@@ -15,18 +15,16 @@
         <a href="/map" class="server-button">DynMap</a>
         <a href="/contact" class="contact-button">Contact</a>
 
-        <audio id="backgroundAudio" autoplay loop muted>
-            <source src="headswillroll.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
+        <audio id="backgroundAudio" autoplay loop>
+        <source src="/static/headswillroll.ogg" type="audio/mp3">
+        <source src="/static/headswillroll.mp3" type="audio/mp3">
         </audio>
     </div>
 
     <script>
-
-        document.body.addEventListener('click', function() {
-            document.getElementById('backgroundAudio').muted = false;
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('backgroundAudio').play();
         });
-
 
         window.addEventListener('beforeunload', function () {
             document.getElementById('backgroundAudio').pause();
