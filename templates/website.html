@@ -7,20 +7,41 @@
     <title>Minecraft Server</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Velkommen til fantastisk minecraft server</h1>
-        <p>Hvis du er her er du som meg, du har ikke et liv, så her er minecraft server.</p>
+    <div class="top-text-container">
+        <h1 class="large-text">Velkommen til fantastisk minecraft server</h1>
+        <p>Hvis du er her er du som meg, du har ikke et liv, og med den informasjonen her er minecraft server.</p>
         <p>Server IP: <span id="serverIP">mc-nicho.it1.iktim.no</span></p>
-        <a href="/server" class="server-button">Server</a>
-        <a href="/map" class="server-button">DynMap</a>
-        <a href="/contact" class="contact-button">Discord</a>
-
-        <audio id="backgroundAudio" autoplay loop>
-        <source src="/static/headswillroll.ogg" type="audio/mp3">
-        <source src="/static/headswillroll.mp3" type="audio/mp3">
-        </audio>
     </div>
 
+    <div class="buttons-container">
+        <a href="/map" class="dynmap-button">
+            <div class="button" id="button1" onmouseover="enlargeButton(1)" onmouseout="shrinkButton(1)">
+                <img src="{{ url_for('static', filename='dynmap.png') }}" alt="DynMap Example Image">
+            </div>
+        </a>
+
+        <a href="/contact" class="discord-button">
+            <div class="button" id="button2" onmouseover="enlargeButton(2)" onmouseout="shrinkButton(2)">
+                <img src="{{ url_for('static', filename='discord.png') }}" alt="Discord Example Image">
+            </div>
+        </a>
+    </div>
+
+    <audio id="backgroundAudio" autoplay loop>
+        <source src="{{ url_for('static', filename='headswillroll.ogg') }}" type="audio/mp3">
+        <source src="{{ url_for('static', filename='headswillroll.mp3') }}" type="audio/mp3">
+    </audio>
+
+    <div class="music-controls">
+        <button onclick="pauseAudio()" class="pause-button">
+            <img src="{{ url_for('static', filename='pause.png') }}" alt="Pause Icon">
+        </button>
+        <button onclick="resumeAudio()" class="resume-button">
+            <img src="{{ url_for('static', filename='resume.png') }}" alt="Resume Icon">
+        </button>
+    </div>
+
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('backgroundAudio').play();
@@ -29,6 +50,14 @@
         window.addEventListener('beforeunload', function () {
             document.getElementById('backgroundAudio').pause();
         });
+
+        function pauseAudio() {
+            document.getElementById('backgroundAudio').pause();
+        }
+
+        function resumeAudio() {
+            document.getElementById('backgroundAudio').play();
+        }
     </script>
 </body>
 </html>

@@ -1,73 +1,119 @@
+@font-face {
+    font-family: 'MinecraftEvenings';
+    src: url('/static/Minecraftchmc-dBlX.ttf') format('truetype');
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #3498db;
-    color: #fff;
-}
-
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
     background-color: #2c3e50;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #f39c12;
+    font-family: 'MinecraftEvenings', Arial, sans-serif;
 }
 
-h1 {
-    color: #ecf0f1;
+.top-text-container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1.large-text {
+    color: #c0392b;
+    text-align: center;
+    font-size: 3em;
 }
 
 p {
     color: #bdc3c7;
+    text-align: center;
+    font-size: 2.25em;
 }
 
-.server-button {
-    background-color: #e74c3c;
-    color: #fff;
-    padding: 10px 20px;
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    transition: width 0.3s, height 0.3s;
+    margin: 20px;
+    position: relative;
+}
+
+.button img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.dynmap-button,
+.discord-button {
+    background-color: transparent;
+    padding: 0;
     border: none;
-    border-radius: 15px;
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.discord-button:hover .button img {
+    transform: scale(0.75);
+}
+
+.discord-button:hover .button {
+    width: 180px; /* Adjusted the button size to 90% of its original size */
+    height: 180px;
+}
+
+.dynmap-button:hover .button,
+.discord-button:hover .button {
+    width: 225px;
+    height: 225px;
+}
+
+.dynmap-button:hover .button img,
+.discord-button:hover .button img {
+    width: 100%;
+    height: 100%;
+}
+
+.music-controls {
+    display: flex;
+    justify-content: center; /* Adjusted to center the buttons */
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+.pause-button,
+.resume-button {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
     text-decoration: none;
 }
 
-.server-button:hover {
-    background-color: #c0392b;
-}
-.contact-button {
-    background-color: #27ae60; /* Set button background color to green */
-    color: #fff; /* Set button text color to white */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 15px; /* Set border radius for rounded corners */
-    cursor: pointer;
-    position: absolute;
-    bottom: 10px; /* Position at the bottom */
-    left: 10px; /* Position at the left */
-    text-decoration: none; /* Remove underline for the link */
+.pause-button img,
+.resume-button img {
+    width: 50px;
+    height: 50px;
 }
 
-.contact-button:hover {
-    background-color: #219150; /* Change button color on hover */
-}
-.register-button {
-    background-color: #e74c3c; /* Set button background color to red */
-    color: #fff; /* Set button text color to white */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 15px; /* Set border radius for rounded corners */
-    cursor: pointer;
-    position: absolute;
-    bottom: 10px; /* Position at the bottom */
-    right: 10px; /* Position at the right */
-    text-decoration: none; /* Remove underline for the link */
+.pause-button:hover,
+.resume-button:hover {
+    background-color: transparent;
 }
 
-.register-button:hover {
-    background-color: #c0392b;
+.pause-button {
+    margin-right: 10px; /* Added margin to separate pause and resume buttons */
 }
