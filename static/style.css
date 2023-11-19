@@ -67,7 +67,7 @@ p {
 }
 
 .discord-button:hover .button {
-    width: 180px; /* Adjusted the button size to 90% of its original size */
+    width: 180px;
     height: 180px;
 }
 
@@ -85,7 +85,7 @@ p {
 
 .music-controls {
     display: flex;
-    justify-content: center; /* Adjusted to center the buttons */
+    justify-content: center;
     position: fixed;
     bottom: 20px;
     width: 100%;
@@ -115,5 +115,5 @@ p {
 }
 
 .pause-button {
-    margin-right: 10px; /* Added margin to separate pause and resume buttons */
+    margin-right: 10px;
 }

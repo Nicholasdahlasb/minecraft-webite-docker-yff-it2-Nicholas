@@ -8,9 +8,9 @@
 </head>
 <body>
     <div class="top-text-container">
-        <h1 class="large-text">Velkommen til fantastisk minecraft server</h1>
-        <p>Hvis du er her er du som meg, du har ikke et liv, og med den informasjonen her er minecraft server.</p>
-        <p>Server IP: <span id="serverIP">mc-nicho.it1.iktim.no</span></p>
+        <h1 class="large-text">VELKOMMEN TIL FANTASTISK MINECRAFT SERVER</h1>
+        <p>HVIS DU ER HER ER DU SOM MEG, DU HAR IKKE ET LIV, OG MED DEN INFORMATION HER ER EN MINECRAFT SERVER.</p>
+        <p>SERVER IP: <span id="serverIP">MC-NICHO.IT1.IKTIM.NO</span></p>
     </div>
 
     <div class="buttons-container">
@@ -27,7 +27,7 @@
         </a>
     </div>
 
-    <audio id="backgroundAudio" autoplay loop>
+    <audio id="backgroundAudio" loop>
         <source src="{{ url_for('static', filename='headswillroll.ogg') }}" type="audio/mp3">
         <source src="{{ url_for('static', filename='headswillroll.mp3') }}" type="audio/mp3">
     </audio>
@@ -44,7 +44,6 @@
     <script defer src="{{ url_for('static', filename='script.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('backgroundAudio').play();
         });
 
         window.addEventListener('beforeunload', function () {

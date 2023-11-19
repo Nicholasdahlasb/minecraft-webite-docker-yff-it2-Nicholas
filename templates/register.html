@@ -8,18 +8,50 @@
         body { margin: 0; overflow: hidden; }
         iframe { width: 100%; height: 100vh; border: 0; }
         .home-button { position: absolute; top: 10px; right: 10px; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .music-controls { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); }
+        .pause-button, .resume-button { background: none; border: none; cursor: pointer; }
     </style>
     <title>Minecraft Server Map</title>
 </head>
+<body>
     <div>
-        <audio id="backgroundAudio" autoplay loop>
-        <source src="/static/headswillroll.ogg" type="audio/mp3">
-        <source src="/static/headswillroll.mp3" type="audio/mp3">
+        <audio id="backgroundAudio" loop>
+            <source src="/static/headswillroll.ogg" type="audio/mp3">
+            <source src="/static/headswillroll.mp3" type="audio/mp3">
         </audio>
     </div>
-<body>
+
     <iframe src="https://mc-nicho.it1.iktim.no" id="dynmapFrame" frameborder="0"></iframe>
     <a href="/" class="home-button">Home</a>
-    <script>document.querySelector('.home-button').addEventListener('click', function() { window.location.href = '/'; });</script>
+
+    <div class="music-controls">
+        <button onclick="pauseAudio()" class="pause-button">
+            <img src="{{ url_for('static', filename='pause_white.png') }}" alt="Pause Icon">
+        </button>
+        <button onclick="resumeAudio()" class="resume-button">
+            <img src="{{ url_for('static', filename='resume_hvit.png') }}" alt="Resume Icon">
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        });
+
+        window.addEventListener('beforeunload', function () {
+            document.getElementById('backgroundAudio').pause();
+        });
+
+        function pauseAudio() {
+            document.getElementById('backgroundAudio').pause();
+        }
+
+        function resumeAudio() {
+            document.getElementById('backgroundAudio').play();
+        }
+
+        document.querySelector('.home-button').addEventListener('click', function() {
+            window.location.href = '/';
+        });
+    </script>
 </body>
 </html>
