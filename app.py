@@ -12,11 +12,10 @@ def server():
 
 @app.route('/map')
 def register():
-    return render_template('register.html')
+    return render_template('map.html')
 
 @app.route('/contact')
 def contact():
-    # Redirect to the YouTube video link
     return redirect("https://discord.gg/uMwMdfDmQ2")
 
 if __name__ == '__main__':
