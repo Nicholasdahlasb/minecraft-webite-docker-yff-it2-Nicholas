@@ -15,7 +15,7 @@ def jesus():
     return render_template('jesus.html')
 
 @app.route('/satan')
-def jesus():
+def satan():
     return render_template('satan.html')
 
 @app.route('/contact')
