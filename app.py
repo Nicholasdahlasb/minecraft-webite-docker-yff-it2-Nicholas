@@ -14,6 +14,10 @@ def register():
 def jesus():
     return render_template('jesus.html')
 
+@app.route('/satan')
+def jesus():
+    return render_template('satan.html')
+
 @app.route('/contact')
 def contact():
     return redirect("https://discord.gg/uMwMdfDmQ2")
