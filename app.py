@@ -6,10 +6,6 @@ app = Flask(__name__)
 def home():
     return render_template('website.html')
 
-@app.route('/server')
-def server():
-    return render_template('server.html')
-
 @app.route('/map')
 def register():
     return render_template('map.html')
