@@ -10,6 +10,10 @@ def home():
 def register():
     return render_template('map.html')
 
+@app.route('/jesus')
+def jesus():
+    return render_template('jesus.html')
+
 @app.route('/contact')
 def contact():
     return redirect("https://discord.gg/uMwMdfDmQ2")

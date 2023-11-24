@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body { margin: 0; overflow: hidden; }
+        iframe { width: 100%; height: 100vh; border: 0; }
+        .home-button { position: absolute; top: 10px; right: 10px; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .music-controls { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); }
+        .pause-button, .resume-button { background: none; border: none; cursor: pointer; }
+    </style>
+    <title>Minecraft Server Map</title>
+</head>
+<body>
+    <iframe src="https://jesus.it1.iktim.no" id="dynmapFrame" frameborder="0"></iframe>
+    <a href="/" class="home-button">Home</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        });
+
+        window.addEventListener('beforeunload', function () {
+            document.getElementById('backgroundAudio').pause();
+        });
+
+        function pauseAudio() {
+            document.getElementById('backgroundAudio').pause();
+        }
+
+        function resumeAudio() {
+            document.getElementById('backgroundAudio').play();
+        }
+
+        document.querySelector('.home-button').addEventListener('click', function() {
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>

@@ -117,3 +117,24 @@ p {
 .pause-button {
     margin-right: 10px;
 }
+
+.jesus-button:hover .button img {
+    transform: scale(0.75);
+}
+
+.jesus-button:hover .button {
+    width: 180px;
+    height: 180px;
+}
+
+.jesus-button:hover .button,
+.jesus-button:hover .button {
+    width: 225px;
+    height: 225px;
+}
+
+.jesus-button:hover .button img,
+.jesus-button:hover .button img {
+    width: 100%;
+    height: 100%;
+}
